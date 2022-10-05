@@ -10,7 +10,7 @@ allSquares.forEach(e => {
     e.onclick = function () {
         if (turn === "x") {
             if (e.innerHTML !== "O") {
-                e.style.fontSize = "40px"
+                e.style.fontSize = "100px"
                 e.innerHTML = "X"
                 if (compare(turn)) {
                     turn = "o"
@@ -19,7 +19,7 @@ allSquares.forEach(e => {
             }
         } else {
             if (e.innerHTML !== "X") {
-                e.style.fontSize = "40px"
+                e.style.fontSize = "100px"
                 e.innerHTML = "O"
                 if (compare(turn)) {
                     turn = "x"
