@@ -14,16 +14,17 @@ body {
 
 .game {
     position: relative;
-    width: 300px;
+    width: 80%;
     text-align: center;
     color: white;
     font-family: system-ui;
+    height: 80%;
 }
 
 .title {
     background-color: blueviolet;
     font-size: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     padding: 10px;
     text-transform: capitalize;
 }
@@ -32,20 +33,31 @@ span {
     color: yellow;
 }
 
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
 
 .square {
     background-color: blueviolet;
-    width: 90px;
-    height: 90px;
-    float: left;
-    margin: 5px;
+    flex-basis: 30%;
+    height: 130px;
     font-size: 0PX;
-    line-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .square:hover {
     background-color: #000;
     cursor: pointer;
+}
+
+@media (max-width:971px) {
+    .square:hover {
+        background-color: blueviolet;
+    }
 }
 
 .layer {
