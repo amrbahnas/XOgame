@@ -29,31 +29,29 @@ allSquares.forEach(e => {
 
 
 const compare = (turn) => {
-    let test = []
+    let status = []
     allSquares.forEach(e => {
-        test.push(e.innerHTML)
+        status.push(e.innerHTML)
     })
-
     if (
-        (test[0] === test[1] && test[0] === test[2]) ||
-        (test[3] === test[4] && test[3] === test[5]) ||
-        (test[6] === test[7] && test[6] === test[8]) ||
-        (test[0] === test[3] && test[0] === test[6]) ||
-        (test[2] === test[5] && test[2] === test[8]) ||
-        (test[0] === test[4] && test[0] === test[8]) ||
-        (test[2] === test[4] && test[2] === test[6])
+        (status[0] === status[1] && status[0] === status[2]) ||
+        (status[3] === status[4] && status[3] === status[5]) ||
+        (status[6] === status[7] && status[6] === status[8]) ||
+        (status[0] === status[3] && status[0] === status[6]) ||
+        (status[2] === status[5] && status[2] === status[8]) ||
+        (status[0] === status[4] && status[0] === status[8]) ||
+        (status[2] === status[4] && status[2] === status[6])
     ) {
         title.innerHTML = `${turn} winner`
         weHaveWinner();
         return false
-    } else if (!test.find(e => typeof +e === 'number')) {
+    } else if ((status.find(e => Number.isInteger(+e))) === undefined) {
         title.innerHTML = `Draw!`
         weHaveDraw();
         return false
     }
 
     else {
-        console.log(test.find(e => typeof e === 'number'))
         return true
     }
 }
