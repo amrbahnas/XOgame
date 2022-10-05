@@ -18,15 +18,22 @@ body {
     text-align: center;
     color: white;
     font-family: system-ui;
-    height: 80%;
+    height: 100%;
+    padding: 20px 0;
 }
 
 .title {
+    height: 15%;
     background-color: blueviolet;
-    font-size: 40px;
-    margin-bottom: 50px;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
     padding: 10px;
     text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 span {
@@ -34,15 +41,16 @@ span {
 }
 
 .controls {
+    height: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 20px;
 }
 
 .square {
     background-color: blueviolet;
     flex-basis: 30%;
-    height: 130px;
+    /* height: 130px; */
     font-size: 0PX;
     display: flex;
     align-items: center;
