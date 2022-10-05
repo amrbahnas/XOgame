@@ -12,6 +12,22 @@ body {
     justify-content: center;
 }
 
+.result {
+    position: fixed;
+    top: 10px;
+    left: 5px;
+    z-index: 100;
+    background-color: white;
+    color: black;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
 .game {
     position: relative;
     width: 80%;
@@ -41,6 +57,12 @@ body {
     justify-content: center;
 }
 
+@media (max-width:971px) {
+    .title {
+        font-size: 40px;
+    }
+}
+
 span {
     color: yellow;
 }
@@ -54,8 +76,7 @@ span {
 
 .square {
     background-color: blueviolet;
-    flex-basis: 30%;
-    /* height: 130px; */
+    height: 150px;
     font-size: 0PX;
     display: flex;
     align-items: center;
