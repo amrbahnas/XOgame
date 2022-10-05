@@ -73,12 +73,11 @@ const weHaveWinner = () => {
         }
     } else {
         oScore++;
-        if (oScore == 5) {
+        if (oScore === 5) {
             roudStatus = roundFinshed(turn)
             result.innerHTML = `X: ${xScore} || O: ${oScore}`
         } else {
             result.innerHTML = `X: ${xScore} || O: ${oScore}`
-
         }
     }
     if (roudStatus) {
