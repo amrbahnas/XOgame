@@ -99,26 +99,27 @@ const weHaveWinner = () => {
             document.querySelector(".layer").style.display = "none";
         }, 3000)
     }
-    /*********************** Draw case */
-    const weHaveDraw = () => {
-        document.querySelector(".layer").style.display = "block";
-        dots = "."
-        const animation = setInterval(() => {
-            title.innerHTML = `Draw${dots} `
-            dots = dots + "."
-        }, 800)
-        setTimeout(() => {
-            clearInterval(animation);
-            title.innerHTML = `New Game`
-            let i = 0;
-            allSquares.forEach(e => {
-                e.innerHTML = i++;
-                e.style.fontSize = "0px"
-            })
-            document.querySelector(".layer").style.display = "none";
-        }, 3000)
-    }
 }
+/*********************** Draw case */
+const weHaveDraw = () => {
+    document.querySelector(".layer").style.display = "block";
+    dots = "."
+    const animation = setInterval(() => {
+        title.innerHTML = `Draw${dots} `
+        dots = dots + "."
+    }, 800)
+    setTimeout(() => {
+        clearInterval(animation);
+        title.innerHTML = `New Game`
+        let i = 0;
+        allSquares.forEach(e => {
+            e.innerHTML = i++;
+            e.style.fontSize = "0px"
+        })
+        document.querySelector(".layer").style.display = "none";
+    }, 3000)
+}
+
 
 
 /******************* round finished */

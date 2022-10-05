@@ -82,6 +82,7 @@ span {
 
 .square {
     background-color: blueviolet;
+    min-height: 150px;
     font-size: 0PX;
     display: flex;
     align-items: center;
