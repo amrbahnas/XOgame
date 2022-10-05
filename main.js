@@ -46,7 +46,14 @@ const compare = (turn) => {
         title.innerHTML = `${turn} winner`
         weHaveWinner();
         return false
-    } else {
+    } else if (!test.find(e => typeof +e === 'number')) {
+        title.innerHTML = `Draw!`
+        weHaveDraw();
+        return false
+    }
+
+    else {
+        console.log(test.find(e => typeof e === 'number'))
         return true
     }
 }
@@ -56,6 +63,24 @@ const weHaveWinner = () => {
     dots = "."
     const animation = setInterval(() => {
         title.innerHTML = `${turn} winner${dots}`
+        dots = dots + "."
+    }, 800)
+    setTimeout(() => {
+        clearInterval(animation);
+        title.innerHTML = `New Game`
+        let i = 0;
+        allSquares.forEach(e => {
+            e.innerHTML = i++;
+            e.style.fontSize = "0px"
+        })
+        document.querySelector(".layer").style.display = "none";
+    }, 3000)
+}
+const weHaveDraw = () => {
+    document.querySelector(".layer").style.display = "block";
+    dots = "."
+    const animation = setInterval(() => {
+        title.innerHTML = `Draw${dots}`
         dots = dots + "."
     }, 800)
     setTimeout(() => {
