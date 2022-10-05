@@ -60,20 +60,22 @@ const compare = (turn) => {
     }
 }
 
-/*********************** win case */
+/*********************** win case and check round status */
 const weHaveWinner = () => {
     let roudStatus = true;
     if (turn === "x") {
         xScore++;
-        if (xScore === 2) {
+        if (xScore === 5) {
             roudStatus = roundFinshed(turn)
+            result.innerHTML = `X: ${xScore} || O: ${oScore}`
         } else {
             result.innerHTML = `X: ${xScore} || O: ${oScore}`
         }
     } else {
         oScore++;
-        if (oScore == 2) {
+        if (oScore == 5) {
             roudStatus = roundFinshed(turn)
+            result.innerHTML = `X: ${xScore} || O: ${oScore}`
         } else {
             result.innerHTML = `X: ${xScore} || O: ${oScore}`
 
@@ -119,7 +121,7 @@ const weHaveWinner = () => {
 }
 
 
-/******************* show result */
+/******************* round finished */
 let layer = document.querySelector(".layer")
 
 const roundFinshed = (turn) => {
