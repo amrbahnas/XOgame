@@ -74,9 +74,14 @@ span {
     gap: 20px;
 }
 
+@media (max-width:971px) {
+    .controls {
+        gap: 10px;
+    }
+}
+
 .square {
     background-color: blueviolet;
-    height: 150px;
     font-size: 0PX;
     display: flex;
     align-items: center;
