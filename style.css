@@ -102,3 +102,12 @@ span {
     left: 0;
     display: none;
 }
+
+.endRound {
+    font-size: 100px;
+    letter-spacing: 2px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+}

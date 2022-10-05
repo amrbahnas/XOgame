@@ -1,7 +1,10 @@
 let turn = "x"
+let xScore = 0;
+let oScore = 0;
 
 let allSquares = document.querySelectorAll(".square")
 let title = document.querySelector(".title")
+let result = document.querySelector(".result")
 
 allSquares.forEach(e => {
     e.onclick = function () {
@@ -27,7 +30,7 @@ allSquares.forEach(e => {
     }
 })
 
-
+/*********************** main function compare  */
 const compare = (turn) => {
     let status = []
     allSquares.forEach(e => {
@@ -38,6 +41,7 @@ const compare = (turn) => {
         (status[3] === status[4] && status[3] === status[5]) ||
         (status[6] === status[7] && status[6] === status[8]) ||
         (status[0] === status[3] && status[0] === status[6]) ||
+        (status[1] === status[4] && status[1] === status[7]) ||
         (status[2] === status[5] && status[2] === status[8]) ||
         (status[0] === status[4] && status[0] === status[8]) ||
         (status[2] === status[4] && status[2] === status[6])
@@ -56,15 +60,81 @@ const compare = (turn) => {
     }
 }
 
+/*********************** win case */
 const weHaveWinner = () => {
-    document.querySelector(".layer").style.display = "block";
-    dots = "."
-    const animation = setInterval(() => {
-        title.innerHTML = `${turn} winner${dots}`
-        dots = dots + "."
-    }, 800)
-    setTimeout(() => {
-        clearInterval(animation);
+    let roudStatus = true;
+    if (turn === "x") {
+        xScore++;
+        if (xScore === 2) {
+            roudStatus = roundFinshed(turn)
+        } else {
+            result.innerHTML = `X: ${xScore} || O: ${oScore}`
+        }
+    } else {
+        oScore++;
+        if (oScore == 2) {
+            roudStatus = roundFinshed(turn)
+        } else {
+            result.innerHTML = `X: ${xScore} || O: ${oScore}`
+
+        }
+    }
+    if (roudStatus) {
+        document.querySelector(".layer").style.display = "block";
+        dots = "."
+        const animation = setInterval(() => {
+            title.innerHTML = `${turn} winner${dots} `
+            dots = dots + "."
+        }, 800)
+        setTimeout(() => {
+            clearInterval(animation);
+            title.innerHTML = `New Game`
+            let i = 0;
+            allSquares.forEach(e => {
+                e.innerHTML = i++;
+                e.style.fontSize = "0px"
+            })
+            document.querySelector(".layer").style.display = "none";
+        }, 3000)
+    }
+    /*********************** Draw case */
+    const weHaveDraw = () => {
+        document.querySelector(".layer").style.display = "block";
+        dots = "."
+        const animation = setInterval(() => {
+            title.innerHTML = `Draw${dots} `
+            dots = dots + "."
+        }, 800)
+        setTimeout(() => {
+            clearInterval(animation);
+            title.innerHTML = `New Game`
+            let i = 0;
+            allSquares.forEach(e => {
+                e.innerHTML = i++;
+                e.style.fontSize = "0px"
+            })
+            document.querySelector(".layer").style.display = "none";
+        }, 3000)
+    }
+}
+
+
+/******************* show result */
+let layer = document.querySelector(".layer")
+
+const roundFinshed = (turn) => {
+    layer.innerHTML = "start new Round"
+    layer.style.display = "flex"
+    layer.classList.add("endRound")
+    title.innerHTML = `round finished ${turn} Win`
+    return false
+}
+
+window.addEventListener('click', function (e) {
+    if (e.target.classList.contains("endRound")) {
+        xScore = 0;
+        oScore = 0;
+        result.innerHTML = `X: 0 || O: 0`
         title.innerHTML = `New Game`
         let i = 0;
         allSquares.forEach(e => {
@@ -72,23 +142,6 @@ const weHaveWinner = () => {
             e.style.fontSize = "0px"
         })
         document.querySelector(".layer").style.display = "none";
-    }, 3000)
-}
-const weHaveDraw = () => {
-    document.querySelector(".layer").style.display = "block";
-    dots = "."
-    const animation = setInterval(() => {
-        title.innerHTML = `Draw${dots}`
-        dots = dots + "."
-    }, 800)
-    setTimeout(() => {
-        clearInterval(animation);
-        title.innerHTML = `New Game`
-        let i = 0;
-        allSquares.forEach(e => {
-            e.innerHTML = i++;
-            e.style.fontSize = "0px"
-        })
-        document.querySelector(".layer").style.display = "none";
-    }, 3000)
-}
+        layer.classList.remove("endRound")
+    }
+})
