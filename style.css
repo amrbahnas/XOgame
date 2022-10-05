@@ -18,8 +18,13 @@ body {
     text-align: center;
     color: white;
     font-family: system-ui;
-    height: 100%;
-    padding: 20px 0;
+    height: 90%;
+}
+
+@media (max-width:971px) {
+    .game {
+        width: 90%;
+    }
 }
 
 .title {
