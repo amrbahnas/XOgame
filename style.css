@@ -86,7 +86,7 @@ span {
 @media (max-width:971px) {
     .controls {
         gap: 10px;
-        height: 80%;
+        height: 70%;
         width: 100%;
     }
 }
