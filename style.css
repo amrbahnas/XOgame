@@ -36,6 +36,10 @@ body {
     color: white;
     font-family: system-ui;
     height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width:971px) {
@@ -46,7 +50,8 @@ body {
 
 .title {
     height: 17%;
-    background-color: blueviolet;
+    width: 100%;
+    /* background-color: blueviolet; */
     font-size: 80px;
     font-weight: bold;
     letter-spacing: 5px;
@@ -70,6 +75,7 @@ span {
 
 .controls {
     height: 80%;
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
@@ -79,7 +85,7 @@ span {
     .controls {
         gap: 10px;
         height: 70%;
-
+        width: 100%;
     }
 }
 
