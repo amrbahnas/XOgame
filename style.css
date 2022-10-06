@@ -10,6 +10,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .result {
@@ -59,7 +60,7 @@ body {
 
 @media (max-width:971px) {
     .title {
-        font-size: 70px;
+        font-size: 50px;
     }
 }
 
@@ -77,6 +78,8 @@ span {
 @media (max-width:971px) {
     .controls {
         gap: 10px;
+        height: 70%;
+
     }
 }
 

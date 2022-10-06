@@ -98,6 +98,7 @@ const weHaveWinner = () => {
             document.querySelector(".layer").style.display = "none";
         }, 3000)
     }
+    turn = "x"
 }
 /*********************** Draw case */
 const weHaveDraw = () => {
@@ -117,6 +118,7 @@ const weHaveDraw = () => {
         })
         document.querySelector(".layer").style.display = "none";
     }, 3000)
+    turn = "x"
 }
 
 
@@ -129,6 +131,7 @@ const roundFinshed = (turn) => {
     layer.style.display = "flex"
     layer.classList.add("endRound")
     title.innerHTML = `round finished ${turn} Win`
+    turn = "x"
     return false
 }
 
