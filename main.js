@@ -9,7 +9,7 @@ let result = document.querySelector(".result")
 allSquares.forEach(e => {
     e.onclick = function () {
         if (turn === "x") {
-            if (e.innerHTML !== "O") {
+            if (e.innerHTML !== "O" || e.innerHTML !== "x") {
                 e.style.fontSize = "100px"
                 e.innerHTML = "X"
                 if (compare(turn)) {
@@ -18,7 +18,7 @@ allSquares.forEach(e => {
                 }
             }
         } else {
-            if (e.innerHTML !== "X") {
+            if (e.innerHTML !== "O" || e.innerHTML !== "x") {
                 e.style.fontSize = "100px"
                 e.innerHTML = "O"
                 if (compare(turn)) {
