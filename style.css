@@ -27,6 +27,8 @@ body {
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .game {
@@ -74,7 +76,7 @@ span {
 }
 
 .controls {
-    height: 80%;
+    height: 100%;
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -84,7 +86,7 @@ span {
 @media (max-width:971px) {
     .controls {
         gap: 10px;
-        height: 70%;
+        height: 80%;
         width: 100%;
     }
 }
@@ -107,6 +109,7 @@ span {
     .square:hover {
         background-color: blueviolet;
     }
+
 }
 
 .layer {
