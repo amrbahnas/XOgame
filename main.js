@@ -96,9 +96,11 @@ const weHaveWinner = () => {
                 e.style.fontSize = "0px"
             })
             document.querySelector(".layer").style.display = "none";
+            turn = "x"
         }, 3000)
+
+
     }
-    turn = "x"
 }
 /*********************** Draw case */
 const weHaveDraw = () => {
